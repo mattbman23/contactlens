@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      canvas {
+        height: 100vh;
+        width: 100vw;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      window.RufflePlayer = window.RufflePlayer || {};
+      window.addEventListener("load", (event) => {
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer();
+        player.style.width = "100vw";
+        player.style.height = "100vh";
+        const container = document.getElementById("dScreen");
+        container.appendChild(player);
+        player.load("./contactlens.swf");
+      });
+    </script>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+
+    <div id="dScreen"></div>
+  </body>
+</html>
